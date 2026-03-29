@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { ImageWithFallback } from "./components/figma/ImageWithFallback";
-import boatHeadphone from "figma:asset/04ba0feb66c433d972b9207e887b84ad0bed9b56.png";
-import boatBlack from "figma:asset/04ba0feb66c433d972b9207e887b84ad0bed9b56.png";
-import boatNavy from "figma:asset/8c28049ee49973093aeaaebfb2253a21ab4fdc40.png";
-import boatSilver from "figma:asset/a4e1729d10664d6ba56c4167738497c7e4998bf1.png";
+
+const boatHeadphone = "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600";
+const boatBlack = "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600";
+const boatNavy = "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600";
+const boatSilver = "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=600";
 
 const ORANGE = "#FF5722";
 
@@ -206,11 +206,11 @@ export default function App() {
           </div>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
             <div style={{ position: "relative" }}>
-              <ImageWithFallback
-                src={boatHeadphone}
-                alt="boAt Nirvana 751 ANC headphones"
-                style={{ width: "100%", maxWidth: 540, height: 460, objectFit: "contain", display: "block", filter: "drop-shadow(0 24px 48px rgba(0,0,0,0.18))" }}
-              />
+              <img
+  src={boatHeadphone}
+  alt="boAt Nirvana 751 ANC headphones"
+  style={{ width: "100%", maxWidth: 540, height: 460, objectFit: "contain", display: "block", filter: "drop-shadow(0 24px 48px rgba(0,0,0,0.18))" }}
+/>
             </div>
           </div>
         </div>
@@ -275,11 +275,11 @@ export default function App() {
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.09)"; (e.currentTarget as HTMLElement).style.borderColor = "#f0f0f0"; }}
               >
                 <div style={{ height: 220, overflow: "hidden" }}>
-                  <ImageWithFallback
-                    src={c.img}
-                    alt={`${c.label} headphones`}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
+                <img
+    src={c.img}
+    alt={`${c.label} headphones`}
+    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                 />
                 </div>
                 <div style={{ padding: "16px 20px", display: "flex", alignItems: "center", gap: 10 }}>
                   <div style={{ width: 18, height: 18, borderRadius: "50%", background: c.dot, border: "2px solid #eee", flexShrink: 0 }} />
