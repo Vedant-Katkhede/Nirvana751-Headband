@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>751Headband — boAt ANC 751 Replacement Headband</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0066FF;
+    --blue-light: #3385FF;
+    --blue-glow: rgba(0,102,255,0.15);
+    --white: #FFFFFF;
+    --off-white: #F7F9FF;
+    --light-gray: #EEF2FF;
+    --dark: #0A0F1E;
+    --mid: #4A5568;
+    --text: #1A202C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 5%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,102,255,0.08);
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+  }
+
+  .logo span { color: var(--blue); }
+
+  nav a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--blue); }
+
+  .nav-links { display: flex; gap: 32px; }
+
+  .nav-cta {
+    background: var(--blue);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    transition: all 0.3s !important;
+    box-shadow: 0 4px 20px rgba(0,102,255,0.3);
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,102,255,0.4) !important; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 5% 60px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #F0F5FF 0%, #FFFFFF 50%, #E8F0FF 100%);
+  }
+
+  /* 3D Background blobs */
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,102,255,0.12) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,102,255,0.08) 0%, transparent 70%);
+    bottom: -50px; left: -50px;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-30px) scale(1.05); }
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 580px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,102,255,0.08);
+    border: 1px solid rgba(0,102,255,0.2);
+    color: var(--blue);
+    padding: 7px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .hero-badge .dot {
+    width: 6px; height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+
+  h1 .highlight {
+    color: var(--blue);
+    position: relative;
+    display: inline-block;
+  }
+
+  h1 .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), transparent);
+    border-radius: 2px;
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--blue);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 8px 30px rgba(0,102,255,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,102,255,0.45); }
+
+  .btn-secondary {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 0;
+    transition: gap 0.3s;
+  }
+  .btn-secondary:hover { gap: 14px; }
+
+  .hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 3D Product Scene */
+  .product-scene {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .orbit-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0,102,255,0.15);
+    animation: spin 20s linear infinite;
+  }
+  .orbit-ring:nth-child(1) { width: 340px; height: 340px; border-style: dashed; animation-duration: 25s; }
+  .orbit-ring:nth-child(2) { width: 420px; height: 420px; animation-duration: 35s; animation-direction: reverse; }
+  .orbit-ring:nth-child(3) { width: 480px; height: 480px; border-style: dotted; animation-duration: 15s; }
+
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  .orbit-dot {
+    position: absolute;
+    width: 8px; height: 8px;
+    background: var(--blue);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--blue);
+  }
+
+  .product-card-3d {
+    position: relative;
+    z-index: 10;
+    background: white;
+    border-radius: 30px;
+    width: 240px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow:
+      0 25px 60px rgba(0,102,255,0.15),
+      0 5px 20px rgba(0,0,0,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+    animation: levitate 5s ease-in-out infinite;
+    border: 1px solid rgba(0,102,255,0.1);
+    transform-style: preserve-3d;
+  }
+
+  @keyframes levitate {
+    0%, 100% { transform: translateY(0) rotateX(5deg) rotateY(-5deg); box-shadow: 0 25px 60px rgba(0,102,255,0.15), 0 5px 20px rgba(0,0,0,0.08); }
+    50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); box-shadow: 0 45px 80px rgba(0,102,255,0.2), 0 15px 30px rgba(0,0,0,0.1); }
+  }
+
+  .headband-3d {
+    width: 140px;
+    height: 140px;
+    position: relative;
+  }
+
+  /* Pure CSS 3D Headband */
+  .hb-arc {
+    width: 120px;
+    height: 60px;
+    border: 14px solid var(--dark);
+    border-bottom: none;
+    border-radius: 60px 60px 0 0;
+    position: absolute;
+    top: 10px; left: 10px;
+    box-shadow: 4px -4px 0 rgba(0,0,0,0.15), inset 0 3px 6px rgba(255,255,255,0.1);
+  }
+
+  .hb-arc.white-variant {
+    border-color: #D0D5E0;
+    box-shadow: 4px -4px 0 rgba(0,0,0,0.08), inset 0 3px 6px rgba(255,255,255,0.5);
+  }
+
+  .product-label {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--dark);
+    text-align: center;
+  }
+
+  .product-label small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--mid);
+    margin-top: 2px;
+  }
+
+  .price-badge-hero {
+    background: linear-gradient(135deg, var(--blue), #0044CC);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0,102,255,0.4);
+  }
+
+  /* Floating chips */
+  .chip {
+    position: absolute;
+    background: white;
+    border: 1px solid rgba(0,102,255,0.15);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--dark);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    white-space: nowrap;
+    z-index: 20;
+  }
+
+  .chip-1 { top: 20px; left: -20px; animation: floatchip 4s ease-in-out infinite; }
+  .chip-2 { bottom: 60px; left: -30px; animation: floatchip 5s ease-in-out infinite 1s; }
+  .chip-3 { top: 40px; right: -20px; animation: floatchip 4.5s ease-in-out infinite 0.5s; }
+  .chip-4 { bottom: 40px; right: -10px; animation: floatchip 6s ease-in-out infinite 1.5s; }
+
+  @keyframes floatchip {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .chip-icon { margin-right: 5px; }
+
+  /* ===== PROBLEM SECTION ===== */
+  .problem {
+    padding: 100px 5%;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .problem::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0,102,255,0.15) 0%, transparent 70%);
+    top: -100px; right: 10%;
+    border-radius: 50%;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .problem h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    max-width: 600px;
+  }
+
+  .problem p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1.05rem;
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 60px;
+  }
+
+  .pain-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .pain-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+  }
+
+  .pain-card:hover {
+    background: rgba(0,102,255,0.08);
+    border-color: rgba(0,102,255,0.3);
+    transform: translateY(-4px);
+  }
+
+  .pain-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .pain-card:hover::before { opacity: 1; }
+
+  .pain-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .pain-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .pain-card p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* ===== SOLUTION ===== */
+  .solution {
+    padding: 100px 5%;
+    background: var(--off-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .solution-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .solution h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .solution p {
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .check {
+    width: 22px; height: 22px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.65rem;
+    color: white;
+    margin-top: 1px;
+    box-shadow: 0 4px 12px rgba(0,102,255,0.3);
+  }
+
+  /* 3D Visual for solution */
+  .solution-visual {
+    position: relative;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .color-cards {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .color-variant {
+    background: white;
+    border-radius: 24px;
+    padding: 30px 24px;
+    text-align: center;
+    width: 160px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    transition: transform 0.4s;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .color-variant:hover { transform: translateY(-10px) rotate(-2deg); border-color: var(--blue); }
+  .color-variant.black { transform: translateY(-20px) rotate(3deg); }
+  .color-variant.black:hover { transform: translateY(-30px) rotate(3deg); }
+
+  .variant-hb {
+    width: 90px;
+    height: 45px;
+    border-radius: 45px 45px 0 0;
+    border-width: 12px;
+    border-style: solid;
+    border-bottom: none;
+    margin: 0 auto 16px;
+  }
+
+  .variant-hb.dark { border-color: #1a1a2e; box-shadow: 3px -3px 0 rgba(0,0,0,0.2); }
+  .variant-hb.light { border-color: #C8D0E0; box-shadow: 3px -3px 0 rgba(0,0,0,0.1); }
+
+  .color-variant h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .color-variant p {
+    font-size: 0.78rem;
+    color: var(--mid);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .available-badge {
+    display: inline-block;
+    background: #E8F5E9;
+    color: #2E7D32;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-top: 10px;
+  }
+
+  /* Glow behind */
+  .solution-visual::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0,102,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  /* ===== PRODUCT + ORDER ===== */
+  .order-section {
+    padding: 100px 5%;
+    background: white;
+    position: relative;
+  }
+
+  .order-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 10% 50%, rgba(0,102,255,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 90% 20%, rgba(0,102,255,0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .order-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .order-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -1.5px;
+    margin-bottom: 12px;
+  }
+
+  .order-header p { color: var(--mid); font-size: 1rem; }
+
+  .order-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .product-card {
+    background: linear-gradient(145deg, #F7F9FF, #EEF2FF);
+    border-radius: 28px;
+    padding: 40px;
+    border: 1.5px solid rgba(0,102,255,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(0,102,255,0.08), transparent 70%);
+    border-radius: 50%;
+  }
+
+  .product-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .product-card .compat {
+    font-size: 0.82rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .price-display {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .price-display .amount {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -2px;
+  }
+
+  .price-display .currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--mid);
+  }
+
+  .price-display .old {
+    font-size: 1.1rem;
+    text-decoration: line-through;
+    color: #aaa;
+  }
+
+  .savings-tag {
+    display: inline-block;
+    background: #FFF3CD;
+    color: #856404;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+  }
+
+  .specs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .specs li {
+    font-size: 0.88rem;
+    color: var(--mid);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .specs li::before {
+    content: '✓';
+    color: var(--blue);
+    font-weight: 700;
+  }
+
+  .color-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+    align-items: center;
+  }
+
+  .color-selector span {
+    font-size: 0.82rem;
+    color: var(--mid);
+    font-weight: 500;
+  }
+
+  .color-dot {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .color-dot.black-dot {
+    background: #1a1a2e;
+  }
+  .color-dot.white-dot {
+    background: #E8ECF5;
+    border-color: #C8D0E0;
+  }
+  .color-dot.active { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+  /* ===== ORDER FORM ===== */
+  .order-form-card {
+    background: var(--dark);
+    border-radius: 28px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .order-form-card::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0,102,255,0.2), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .order-form-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  .order-form-card > p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--blue);
+    background: rgba(0,102,255,0.08);
+    box-shadow: 0 0 0 3px rgba(0,102,255,0.15);
+  }
+
+  .form-group select option { background: var(--dark); }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .order-btn {
+    width: 100%;
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 16px;
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 8px;
+    box-shadow: 0 8px 25px rgba(0,102,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .order-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 35px rgba(0,102,255,0.5); }
+
+  /* WhatsApp button */
+  .whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 14px;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  .whatsapp-btn:hover { background: #1EBE57; transform: translateY(-2px); }
+
+  /* ===== POLICIES ===== */
+  .policies {
+    background: var(--off-white);
+    padding: 80px 5%;
+  }
+
+  .policies h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 48px;
+    letter-spacing: -1px;
+  }
+
+  .policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .policy-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: center;
+    border: 1px solid rgba(0,102,255,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s;
+  }
+
+  .policy-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,102,255,0.1); border-color: rgba(0,102,255,0.2); }
+
+  .policy-icon {
+    width: 56px; height: 56px;
+    background: rgba(0,102,255,0.08);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin: 0 auto 16px;
+  }
+
+  .policy-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .policy-card p {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+
+  /* Important notice */
+  .video-notice {
+    max-width: 700px;
+    margin: 32px auto 0;
+    background: linear-gradient(135deg, #FFF3CD, #FFF8E1);
+    border: 1.5px solid #F0C040;
+    border-radius: 16px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .video-notice .notice-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+
+  .video-notice h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: #856404;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+
+  .video-notice p {
+    font-size: 0.83rem;
+    color: #6d5202;
+    line-height: 1.5;
+  }
+
+  /* ===== REVIEWS ===== */
+  .reviews {
+    padding: 100px 5%;
+    background: white;
+    overflow: hidden;
+  }
+
+  .reviews-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .reviews-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -1.5px;
+  }
+
+  .stars-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .stars { color: #FFC107; font-size: 1.3rem; letter-spacing: 2px; }
+
+  .star-text { color: var(--mid); font-size: 0.9rem; }
+  .star-text strong { color: var(--dark); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .review-card {
+    background: var(--off-white);
+    border-radius: 20px;
+    padding: 28px 24px;
+    border: 1px solid rgba(0,102,255,0.06);
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .review-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+
+  .review-quote {
+    font-size: 2rem;
+    color: var(--blue);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 12px;
+    font-family: Georgia, serif;
+  }
+
+  .review-text {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .reviewer-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: white;
+  }
+
+  .reviewer-info strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .reviewer-info span {
+    font-size: 0.78rem;
+    color: var(--mid);
+  }
+
+  .review-stars { color: #FFC107; font-size: 0.75rem; margin-top: 2px; }
+
+  /* ===== HOW IT WORKS ===== */
+  .how {
+    padding: 100px 5%;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .how::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,102,255,0.12) 0%, transparent 70%);
+    bottom: -200px; left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+
+  .how h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    letter-spacing: -1.5px;
+    margin-bottom: 64px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step {
+    text-align: center;
+    position: relative;
+  }
+
+  .step-num {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: rgba(0,102,255,0.15);
+    border: 2px solid rgba(0,102,255,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--blue);
+    position: relative;
+  }
+
+  .step-num::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px dashed rgba(0,102,255,0.2);
+  }
+
+  .step h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  .step p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ===== CONTACT STRIP ===== */
+  .contact-strip {
+    background: linear-gradient(135deg, var(--blue) 0%, #0044CC 100%);
+    padding: 60px 5%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .contact-strip h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .contact-strip p {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+    font-size: 1rem;
+    position: relative;
+  }
+
+  .contact-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .contact-btn.white {
+    background: white;
+    color: var(--blue);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .contact-btn.white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+  .contact-btn.outline {
+    border: 2px solid rgba(255,255,255,0.5);
+    color: white;
+  }
+  .contact-btn.outline:hover { background: rgba(255,255,255,0.1); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #050810;
+    padding: 40px 5%;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  footer .logo { color: white; display: block; margin-bottom: 8px; }
+  footer p {
+    color: rgba(255,255,255,0.3);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  footer a:hover { color: var(--blue); }
+
+  /* ===== ANIMATIONS ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Success popup */
+  .popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--dark);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 9999;
+    border-left: 4px solid #25D366;
+    max-width: 300px;
+  }
+  .popup.show { transform: translateY(0); opacity: 1; }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .hero { flex-direction: column; padding: 100px 5% 60px; text-align: center; }
+    .hero-desc { margin: 0 auto 32px; }
+    .hero-actions { justify-content: center; }
+    .hero-visual { display: none; }
+    .solution-inner { grid-template-columns: 1fr; }
+    .order-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .color-cards { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">751<span>Headband</span></div>
+  <div class="nav-links">
+    <a href="#problem">Problem</a>
+    <a href="#product">Product</a>
+    <a href="#order">Order</a>
+    <a href="#reviews">Reviews</a>
+  </div>
+  <a href="#order" class="nav-cta">Buy Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      For boAt Nirvan ANC 751 Owners
+    </div>
+    <h1>Stop Throwing Away Your <span class="highlight">Headphones</span></h1>
+    <p class="hero-desc">
+      The boAt ANC 751 headband breaks in 2 months — and a new pair costs thousands. Our precision 3D-printed replacement headband fixes your headphones for just ₹300. Available in Black & White.
+    </p>
+    <div class="hero-actions">
+      <a href="#order" class="btn-primary">
+        Order Now — ₹300
+        <span>→</span>
+      </a>
+      <a href="#problem" class="btn-secondary">
+        Why you need this
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="product-scene">
+      <div class="orbit-ring"></div>
+      <div class="orbit-ring"></div>
+      <div class="orbit-ring"></div>
+
+      <div class="product-card-3d">
+        <div class="headband-3d">
+          <div class="hb-arc"></div>
+        </div>
+        <div class="product-label">
+          ANC 751 Headband
+          <small>3D Printed · High Strength</small>
+        </div>
+        <div class="price-badge-hero">₹300 only</div>
+      </div>
+
+      <div class="chip chip-1"><span class="chip-icon">🖨️</span> 3D Printed</div>
+      <div class="chip chip-2"><span class="chip-icon">⚡</span> 4 Days Avg. Delivery</div>
+      <div class="chip chip-3"><span class="chip-icon">🎨</span> Black & White</div>
+      <div class="chip chip-4"><span class="chip-icon">🔁</span> Exchange Policy</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <span class="section-tag">The Real Problem</span>
+  <h2>Your boAt ANC 751 Headband Breaks. Every Time.</h2>
+  <p>
+    Thousands of boAt ANC 751 users face the same issue — the plastic headband snaps within 2 months of regular use. boAt doesn't sell spare parts, and buying a new pair costs ₹2,000+. You shouldn't have to.
+  </p>
+
+  <div class="pain-cards">
+    <div class="pain-card fade-up">
+      <span class="pain-icon">💔</span>
+      <h3>Headband Snaps in 2 Months</h3>
+      <p>The original boAt ANC 751 headband uses brittle plastic that cracks under regular daily use — a design flaw thousands of users have experienced.</p>
+    </div>
+    <div class="pain-card fade-up">
+      <span class="pain-icon">💸</span>
+      <h3>No Official Replacement</h3>
+      <p>boAt doesn't sell individual spare parts. Your only official option is buying a completely new headset for ₹2,000+. That's completely unnecessary.</p>
+    </div>
+    <div class="pain-card fade-up">
+      <span class="pain-icon">🗑️</span>
+      <h3>Wasted Headphones</h3>
+      <p>The speakers, drivers, and electronics in your ANC 751 are perfectly fine. Throwing them away just because the headband broke is a waste of money.</p>
+    </div>
+    <div class="pain-card fade-up">
+      <span class="pain-icon">⏳</span>
+      <h3>Warranty Doesn't Cover It</h3>
+      <p>Physical damage like a cracked headband is rarely covered under warranty. You're left with a broken headset and no affordable solution.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution" id="product">
+  <div class="solution-inner">
+    <div class="fade-up">
+      <span class="section-tag">The Fix</span>
+      <h2>Precision 3D Printed. Built to Last.</h2>
+      <p>
+        We've engineered a replacement headband specifically for the boAt Nirvan ANC 751. Same perfect fit — but made from stronger, more flexible material that actually holds up to daily use.
+      </p>
+      <ul class="feature-list">
+        <li><span class="check">✓</span> <strong>Perfect fit</strong> — designed specifically for ANC 751 ear cups</li>
+        <li><span class="check">✓</span> <strong>Stronger material</strong> — doesn't crack under pressure like the original</li>
+        <li><span class="check">✓</span> <strong>Save ₹1,700+</strong> — compared to buying a new pair</li>
+        <li><span class="check">✓</span> <strong>Available in Black & White</strong> — match your original color</li>
+        <li><span class="check">✓</span> <strong>Ships in 2 days</strong> — average delivery in just 4 days</li>
+        <li><span class="check">✓</span> <strong>Exchange guaranteed</strong> — any issues, we replace it</li>
+      </ul>
+    </div>
+
+    <div class="solution-visual fade-up">
+      <div class="color-cards">
+        <div class="color-variant black">
+          <div class="variant-hb dark"></div>
+          <h4>Black</h4>
+          <p>Classic match for most ANC 751 units</p>
+          <span class="available-badge">✓ In Stock</span>
+        </div>
+        <div class="color-variant">
+          <div class="variant-hb light"></div>
+          <h4>White</h4>
+          <p>Clean look for the white variant</p>
+          <span class="available-badge">✓ In Stock</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section class="order-section" id="order">
+  <div class="order-header fade-up">
+    <span class="section-tag">Order Now</span>
+    <h2>Get Your Headphones Back</h2>
+    <p>Fill the form below — your inquiry goes directly to WhatsApp for fastest processing.</p>
+  </div>
+
+  <div class="order-grid">
+    <!-- Product Info -->
+    <div class="product-card fade-up">
+      <h3>boAt ANC 751 Headband</h3>
+      <span class="compat">✓ Fits boAt Nirvan ANC 751 only</span>
+
+      <div class="price-display">
+        <span class="currency">₹</span>
+        <span class="amount">300</span>
+        <span class="old">₹2000+</span>
+      </div>
+      <span class="savings-tag">🎉 Save ₹1,700+ vs buying new</span>
+
+      <div class="color-selector">
+        <span>Color:</span>
+        <div class="color-dot black-dot active" id="dotBlack" onclick="selectColor('Black')"></div>
+        <div class="color-dot white-dot" id="dotWhite" onclick="selectColor('White')"></div>
+        <span id="colorLabel" style="font-weight:600;color:var(--dark)">Black</span>
+      </div>
+
+      <ul class="specs">
+        <li>Precision 3D Printed</li>
+        <li>High-strength, flex-resistant material</li>
+        <li>Ships within 2 days of order</li>
+        <li>Average delivery: 4 days (max 2 weeks)</li>
+        <li>Exchange policy (no returns)</li>
+        <li>Record unboxing video to claim exchange</li>
+      </ul>
+    </div>
+
+    <!-- Order Form -->
+    <div class="order-form-card fade-up">
+      <h3>Place Your Order</h3>
+      <p>Your details will be sent to WhatsApp for confirmation</p>
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="fname" placeholder="Your name" />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="fphone" placeholder="10-digit number" maxlength="10" />
+        </div>
+        <div class="form-group">
+          <label>Color</label>
+          <select id="fcolor">
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Full Delivery Address</label>
+        <textarea id="faddress" rows="3" placeholder="House no, Street, City, State, PIN"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Pincode</label>
+        <input type="text" id="fpincode" placeholder="6-digit pincode" maxlength="6" />
+      </div>
+
+      <button class="order-btn" onclick="sendWhatsApp()">
+        📦 Send Order via WhatsApp
+      </button>
+
+      <a href="mailto:support@751headband.com" class="whatsapp-btn" style="background: rgba(255,255,255,0.08); margin-top: 12px;">
+        ✉️ Email: support@751headband.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- POLICIES -->
+<section class="policies">
+  <h2>Our Policies</h2>
+  <div class="policy-grid">
+    <div class="policy-card fade-up">
+      <div class="policy-icon">🔁</div>
+      <h4>Exchange Only</h4>
+      <p>No returns accepted. Exchange available for manufacturing defects with valid unboxing video proof.</p>
+    </div>
+    <div class="policy-card fade-up">
+      <div class="policy-icon">📦</div>
+      <h4>Ships in 2 Days</h4>
+      <p>We dispatch all orders within 2 business days. Average delivery time is 4 days across India.</p>
+    </div>
+    <div class="policy-card fade-up">
+      <div class="policy-icon">🕐</div>
+      <h4>Max 2 Weeks</h4>
+      <p>All orders are guaranteed to arrive within 2 weeks of order placement, even in remote locations.</p>
+    </div>
+    <div class="policy-card fade-up">
+      <div class="policy-icon">💬</div>
+      <h4>WhatsApp Support</h4>
+      <p>All inquiries and order tracking handled via WhatsApp for quick, personal support.</p>
+    </div>
+  </div>
+
+  <div class="video-notice fade-up">
+    <span class="notice-icon">📹</span>
+    <div>
+      <h4>Important: Record Your Unboxing Video</h4>
+      <p>To qualify for any exchange, you <strong>must record a video while opening your parcel</strong>. This protects both you and us. No unboxing video = no exchange claim accepted.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step fade-up">
+      <div class="step-num">1</div>
+      <h4>Place Order</h4>
+      <p>Fill the form above. Your details are sent directly to our WhatsApp for immediate processing.</p>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">2</div>
+      <h4>We Confirm</h4>
+      <p>We message you on WhatsApp to confirm your order, color, and address before shipping.</p>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">3</div>
+      <h4>Dispatched in 2 Days</h4>
+      <p>Your headband ships within 2 days. You receive a tracking link once dispatched.</p>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">4</div>
+      <h4>Record & Install</h4>
+      <p>Record your unboxing. Install the headband and enjoy your ANC 751 — like brand new.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-header fade-up">
+    <span class="section-tag">Customer Reviews</span>
+    <h2>People Love It</h2>
+    <div class="stars-summary">
+      <span class="stars">★★★★★</span>
+      <span class="star-text"><strong>4.9/5</strong> from happy customers</span>
+    </div>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">My boAt ANC 751 headband snapped after just 6 weeks. Found this on Instagram, ordered it, and it arrived in 3 days. Fits perfectly and feels even sturdier than the original. Saved me ₹2000!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: #0066FF;">A</div>
+        <div class="reviewer-info">
+          <strong>Arjun Mehta</strong>
+          <span>Mumbai, Maharashtra</span>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">Didn't believe it at first but the quality is actually really good. Black colour matches perfectly. WhatsApp support is super fast — they replied within 10 minutes of my inquiry!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: #7C3AED;">P</div>
+        <div class="reviewer-info">
+          <strong>Priya Sharma</strong>
+          <span>Pune, Maharashtra</span>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">Bhai mera headphone ek saal se broken tha. 300 mein yeh wala liya aur ab ekdum new jaisa lag raha hai. Delivery bhi sirf 4 din mein aayi. Bohot badhiya service hai.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: #059669;">R</div>
+        <div class="reviewer-info">
+          <strong>Rohan Desai</strong>
+          <span>Nashik, Maharashtra</span>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">Ordered the white variant for my wife's ANC 751. The colour matching is spot on. They even followed up after delivery to check if everything was okay. Very professional.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: #DC2626;">S</div>
+        <div class="reviewer-info">
+          <strong>Sameer Khan</strong>
+          <span>Hyderabad, Telangana</span>
+          <div class="review-stars">★★★★☆</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">The exchange policy with the unboxing video requirement shows they're serious about quality. Had zero issues anyway — product was perfect. Would recommend to any ANC 751 owner.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: #D97706;">K</div>
+        <div class="reviewer-info">
+          <strong>Kavya Nair</strong>
+          <span>Bangalore, Karnataka</span>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">Couldn't find this anywhere else online. 3D printed feels different from plastic but it's actually more durable. Been using it for 3 months now — no cracks, no issues. Worth every rupee.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: #0891B2;">V</div>
+        <div class="reviewer-info">
+          <strong>Vikram Joshi</strong>
+          <span>Delhi, NCR</span>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<section class="contact-strip">
+  <h2>Questions? We're Here.</h2>
+  <p>Reach us on WhatsApp or Email — we respond fast, every day.</p>
+  <div class="contact-btns">
+    <a href="https://wa.me/917058026884?text=Hi%2C%20I%20want%20to%20order%20a%20boAt%20ANC%20751%20replacement%20headband" class="contact-btn white" target="_blank">
+      💬 WhatsApp Us: +91 70580 26884
+    </a>
+    <a href="mailto:support@751headband.com" class="contact-btn outline">
+      ✉️ support@751headband.com
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="logo">751<span style="color:var(--blue)">Headband</span></span>
+  <p>
+    Replacement headbands for boAt Nirvan ANC 751 · Made with ❤️ in India<br>
+    <a href="mailto:support@751headband.com">support@751headband.com</a> · 
+    <a href="https://wa.me/917058026884">+91 70580 26884</a> · 
+    751headband.com
+  </p>
+  <p style="margin-top: 12px; font-size: 0.75rem;">
+    Not affiliated with boAt Lifestyle. This is an independent aftermarket part.
+  </p>
+</footer>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  ✅ Opening WhatsApp with your order details!
+</div>
+
+<script>
+  // Color selector
+  function selectColor(color) {
+    document.getElementById('colorLabel').textContent = color;
+    document.getElementById('fcolor').value = color;
+    document.getElementById('dotBlack').classList.toggle('active', color === 'Black');
+    document.getElementById('dotWhite').classList.toggle('active', color === 'White');
+  }
+
+  // WhatsApp order
+  function sendWhatsApp() {
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const color = document.getElementById('fcolor').value;
+    const address = document.getElementById('faddress').value.trim();
+    const pincode = document.getElementById('fpincode').value.trim();
+
+    if (!name || !phone || !address || !pincode) {
+      alert('Please fill in all fields before placing your order.');
+      return;
+    }
+
+    if (phone.length !== 10 || isNaN(phone)) {
+      alert('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
+    const msg = encodeURIComponent(
+`🎧 *New Order — boAt ANC 751 Headband*
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Color:* ${color}
+*Address:* ${address}
+*Pincode:* ${pincode}
+*Price:* ₹300
+
+⚠️ I have noted the unboxing video requirement for exchange policy.`
+    );
+
+    const popup = document.getElementById('popup');
+    popup.classList.add('show');
+    setTimeout(() => popup.classList.remove('show'), 4000);
+
+    setTimeout(() => {
+      window.open(`https://wa.me/917058026884?text=${msg}`, '_blank');
+    }, 500);
+  }
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
